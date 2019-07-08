@@ -12,4 +12,9 @@ python3.6 -V
 
 Instalar OpenCV (Libreria de Computer vision to check images)
 sudo pip install opencv-contrib-python 
+sudo python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+pip install --upgrade scikit-image
+pip install --upgrade imutils
+
+
 
