@@ -8,7 +8,6 @@ pipeline {
                         stage('Installing required tools') {
                                 steps {
                                         sh 'sudo yum install git -y'
-                                        sh 'sudo yum install python3 -y'
                                         sh 'sudo curl -O https://bootstrap.pypa.io/get-pip.py'
                                         sh 'sudo python3 get-pip.py --user'
 					sh 'sudo yum install gcc -y'
@@ -40,13 +39,13 @@ pipeline {
                        stage('Virtual Env') {
                                 steps {
 				  sh '''	
-					sudo python3 -m pip install --user virtualenv
-					sudo python3 -m venv mypython
+					python -m pip install --user virtualenv
+					python -m venv mypython
 					source mypython/bin/activate
-					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
-					sudo pip3 install opencv-contrib-python 
-					sudo pip3 install --upgrade scikit-image
-					sudo pip3 install --upgrade imutils
+					python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+					pip install opencv-contrib-python 
+					pip install --upgrade scikit-image
+					pip install --upgrade imutils
 					
 				   '''
                                 }
