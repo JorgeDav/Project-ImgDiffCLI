@@ -39,10 +39,7 @@ pipeline {
 			 
                        stage('Virtual Env') {
                                 steps {
-				  sh '''	
-					sudo pip3 install virtualenv
-					sudo python3 -m venv mypython
-					//virtualenv mypython
+				  sh '''
 					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 					sudo pip3 install opencv-contrib-python 
 					sudo pip3 install --upgrade scikit-image
