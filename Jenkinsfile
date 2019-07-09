@@ -37,7 +37,7 @@ pipeline {
                                 }
                         }
 			 
-                       stage('Virtual Env') {
+                       stage('Install Dependencies') {
                                 steps {
 				  sh '''
 					pip3 install numpy --user
@@ -53,8 +53,11 @@ pipeline {
 			 stage('Build') {
                                 steps {
                                   sh '''
-                                        python3 imgdif/__init__.py -f image1.png -s image11.png
-
+                                        python3 setup.py bdist_wheel
+					cd dist
+					pip3 install imgdif-0.1-py3-none-any.whl
+					cd ..
+					imgapp -f image1.png -s image2.png
                                    '''
                                 }
                        }
