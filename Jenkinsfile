@@ -41,7 +41,7 @@ pipeline {
 				  sh '''	
 					python -m pip install --user virtualenv
 					python -m venv mypython
-					source mypython/bin/activate
+					//source mypython/bin/activate
 					python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 					pip install opencv-contrib-python 
 					pip install --upgrade scikit-image
@@ -54,7 +54,7 @@ pipeline {
                                 steps {
                                   sh '''
                                         python3 imgdif/__init__.py -f image1.png -s image11.png
-					deactivate
+					//deactivate
 
                                    '''
                                 }
