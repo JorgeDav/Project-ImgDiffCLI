@@ -40,7 +40,7 @@ pipeline {
                        stage('Virtual Env and Build ') {
                                 steps {
 				  sh '''	
-					sudo pip333 install virtaulenv --user
+					sudo pip3 install virtaulenv --user
 					virtualenv mypython
 					source mypython/bin/activate
 					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
