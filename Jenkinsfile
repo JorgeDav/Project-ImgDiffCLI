@@ -46,8 +46,8 @@ pipeline {
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
 					sudo yum install libXext libSM libXrender -y
-					sudo pip3 install wheel
-					sudo pip3 install twine
+					sudo python3 -m pip3 install wheel
+					sudo python3 -m pip3 install twine
 					
 				   '''
                                 }
