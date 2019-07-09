@@ -45,6 +45,7 @@ pipeline {
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
+					sudo yum install libXext libSM libXrender
 					
 				   '''
                                 }
