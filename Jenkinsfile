@@ -41,6 +41,7 @@ pipeline {
                                 steps {
 				  sh '''
 					pip3 install numpy --user
+					pip3 install scipy --userr
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
