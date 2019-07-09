@@ -41,7 +41,7 @@ pipeline {
                                 steps {
 				  sh '''	
 					sudo python3 -m pip install --user virtualenv
-					sudo virtualenv mypython
+					sudo python3 -m venv mypython
 					source mypython/bin/activate
 					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 					sudo pip3 install opencv-contrib-python 
