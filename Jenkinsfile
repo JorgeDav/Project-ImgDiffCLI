@@ -40,8 +40,8 @@ pipeline {
                        stage('Install Dependencies') {
                                 steps {
 				  sh '''
-					pip install numpy --user
-					pip install scipy --user
+					sudo pip install numpy --user
+					sudo pip install scipy --user
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
@@ -59,7 +59,7 @@ pipeline {
 					tree
                                         python3 setup.py bdist_wheel
 					cd dist
-					pip install imgdif-0.1-py3-none-any.whl
+					sudo pip install imgdif-0.1-py3-none-any.whl
 					cd ..
 					imgapp -f image1.png -s image2.png
                                    '''
