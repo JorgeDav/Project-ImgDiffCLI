@@ -33,10 +33,6 @@ pipeline {
                                                 cd Project-ImgDiffCLI
                                             fi
 					'''
-                                        sh 'git remote update'
-					sh 'git fetch'
-					sh 'git checkout --track origin/python'
-                                        sh 'cd imgdif'
                                 }
                         }
                 }
