@@ -40,13 +40,13 @@ pipeline {
                        stage('Virtual Env and Build ') {
                                 steps {
 				  sh '''	
-					pip3 install virtaulenv --user
+					pip install virtaulenv --user
 					virtualenv mypython
 					source mypython/bin/activate
 					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
-					sudo pip3 install opencv-contrib-python 
-					sudo pip3 install --upgrade scikit-image
-					sudo pip3 install --upgrade imutils
+					sudo pip install opencv-contrib-python 
+					sudo pip install --upgrade scikit-image
+					sudo pip install --upgrade imutils
 					sudo yum install libXext libSM libXrender
 				   '''
                                 }
