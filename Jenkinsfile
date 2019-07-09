@@ -40,7 +40,7 @@ pipeline {
                        stage('Virtual Env') {
                                 steps {
 				  sh '''
-					sudo python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+					pip3 install numpy --user
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
