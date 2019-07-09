@@ -37,7 +37,7 @@ pipeline {
                                 }
                         }
 			 
-                       stage('Virtual Env and Build ') {
+                       stage('Virtual Env') {
                                 steps {
 				  sh '''	
 					sudo python3 -m pip install --user virtualenv
@@ -51,6 +51,15 @@ pipeline {
 				   '''
                                 }
                        }
+			 stage('Build') {
+                                steps {
+                                  sh '''
+                                        python3 imgdif/__init__.py -f image1.png -s image11.png
+
+                                   '''
+                                }
+                       }
+
 		} 
 }       
 
