@@ -40,14 +40,14 @@ pipeline {
                        stage('Install Dependencies') {
                                 steps {
 				  sh '''
-					sudo pip install numpy --user
-					sudo pip install scipy --user
+					sudo pip3 install numpy --user
+					sudo pip3 install scipy --user
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
 					sudo yum install libXext libSM libXrender -y
-					sudo pip install wheel
-					sudo pip install twine
+					sudo pip3 install wheel
+					sudo pip3 install twine
 					
 				   '''
                                 }
@@ -59,7 +59,7 @@ pipeline {
 					tree
                                         python3 setup.py bdist_wheel
 					cd dist
-					sudo pip install imgdif-0.1-py3-none-any.whl
+					sudo pip3 install imgdif-0.1-py3-none-any.whl
 					cd ..
 					imgapp -f image1.png -s image2.png
                                    '''
