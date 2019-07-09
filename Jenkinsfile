@@ -40,8 +40,8 @@ pipeline {
                        stage('Install Dependencies') {
                                 steps {
 				  sh '''
-					sudo pip install numpy --user
-					sudo pip install scipy --user
+					sudo python3 -m pip install numpy --user
+					sudo python3 -m pip install scipy --user
 					sudo python3 -m pip install opencv-contrib-python 
 					sudo python3 -m pip install --upgrade scikit-image
 					sudo python3 -m pip install --upgrade imutils
