@@ -54,7 +54,6 @@ pipeline {
                                 steps {
                                   sh '''
                                         python3 imgdif/__init__.py -f image1.png -s image11.png
-					//deactivate
 
                                    '''
                                 }
