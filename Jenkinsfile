@@ -37,7 +37,7 @@ pipeline {
                                 }
                         }
 			 
-                       tage('Create a local GitHub directory of the repo') {
+                       stage('Create a local GitHub directory of the repo') {
                                 steps {
 					pip3 install virtaulenv --user
 					virtualenv mypython
