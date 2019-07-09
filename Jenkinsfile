@@ -33,7 +33,8 @@ pipeline {
                                                 cd Project-ImgDiffCLI
                                             fi
 					'''
-                                        sh 'git checkout python'
+                                        sh 'git fetch'
+					sh 'git checkout python'
                                         sh 'cd imgdif'
                                 }
                         }
