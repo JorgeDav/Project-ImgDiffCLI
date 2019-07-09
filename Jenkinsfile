@@ -14,14 +14,14 @@ pipeline {
                         stage('Create a local GitHub directory of the repo') {
                                 steps {
                                         sh 'cd ~'
-                                        sh 'if [ -d "GitHub" ]
+                                        sh 'if [ -d "GitHub" ]; then
                                             then
                                                 cd GitHub
                                             else
                                                 mkdir GitHub
                                                 cd GitHub
                                             fi'
-                                        sh 'if [ -d "Project-ImgDiffCLI" ]
+                                        sh 'if [ -d "Project-ImgDiffCLI" ]; then
                                             then
                                                 cd Project-ImgDiffCLI
                                             else
