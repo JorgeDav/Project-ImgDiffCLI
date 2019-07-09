@@ -10,7 +10,7 @@ pipeline {
                                         sh 'sudo yum install git -y'
                                         sh 'sudo yum install python3 -y'
                                         sh 'sudo curl -O https://bootstrap.pypa.io/get-pip.py'
-                                        sh 'python3 get-pip.py --user'
+                                        sh 'sudo python3 get-pip.py --user'
 					sh 'sudo yum install gcc -y'
                                         sh 'echo "Tools were installed successfully!"'
                                 }
