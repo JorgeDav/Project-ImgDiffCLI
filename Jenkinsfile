@@ -1,6 +1,5 @@
 pipeline {
         agent any
-	#make the build when commit
 	triggers { 
 		pollSCM('') 
 	}
