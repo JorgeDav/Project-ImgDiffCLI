@@ -1,5 +1,9 @@
 pipeline {
         agent any
+	#make the build when commit
+	triggers { 
+		pollSCM('') 
+	}
                 stages {
                         stage('Installing required tools') {
                                 steps {
@@ -14,7 +18,6 @@ pipeline {
 
                         stage('Create a local GitHub directory of the repo') {
                                 steps {
-                                        sh 'cd ~'
                                         sh ''' 
 					    if [[ -d "GitHub" ]]; then
                                             	cd GitHub
@@ -27,7 +30,7 @@ pipeline {
 					    if [[ -d "Project-ImgDiffCLI" ]]; then
                                             	cd Project-ImgDiffCLI
                                             else
-                                                git clone https://github.com/saulcruzm/Project-ImgDiffCLI'
+                                                git clone https://github.com/saulcruzm/Project-ImgDiffCLI
                                                 cd Project-ImgDiffCLI
                                             fi
 					'''
