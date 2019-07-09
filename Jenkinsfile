@@ -14,18 +14,22 @@ pipeline {
                         stage('Create a local GitHub directory of the repo') {
                                 steps {
                                         sh 'cd ~'
-                                        sh 'if [[ -d "GitHub" ]]; then
-                                              cd GitHub
+                                        sh ''' 
+					    if [[ -d "GitHub" ]]; then
+                                            	cd GitHub
                                             else
                                                 mkdir GitHub
                                                 cd GitHub
-                                            fi'
-                                        sh 'if [[ -d "Project-ImgDiffCLI" ]]; then
-                                              cd Project-ImgDiffCLI
+                                            fi
+					'''
+                                        sh '''
+					    if [[ -d "Project-ImgDiffCLI" ]]; then
+                                            	cd Project-ImgDiffCLI
                                             else
                                                 git clone https://github.com/saulcruzm/Project-ImgDiffCLI'
                                                 cd Project-ImgDiffCLI
-                                            fi'
+                                            fi
+					'''
                                         sh 'git checkout python'
                                         sh 'cd imgdif'
                                 }
