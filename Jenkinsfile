@@ -4,7 +4,7 @@ pipeline {
 		pollSCM('')
  
 	}
-                stages {
+                stages { 
                         stage('Installing required tools') {
                                 steps {
                                         sh 'sudo yum install git -y'
@@ -50,7 +50,8 @@ pipeline {
 					sudo yum install libXext libSM libXrender
 				   '''
                                 }
-                        }
-                }
-}
+                       }
+		} 
+}       
+
 
