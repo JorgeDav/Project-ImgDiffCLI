@@ -31,7 +31,7 @@ pipeline{
 			steps{
 				sh '''
 					cd /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/dist
-					python3 -m pip install imgdif-0.1-py3-none-any.whl
+					sudo python3 -m pip install imgdif-0.1-py3-none-any.whl
 				'''
 			}
 		
