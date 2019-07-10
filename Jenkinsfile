@@ -48,7 +48,8 @@ pipeline{
 		*/
 		stage('SonarQube Analisys'){
 			steps{
-				withSonarQubeEnv('Sonar') {
+				scannerHome=/usr/local/bin/sonar-scanner/
+				withSonarQubeEnv('SonarScanner') {
 					sh "${scannerHome}/bin/sonar-scanner"
 				}
 			}
