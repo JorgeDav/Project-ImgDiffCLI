@@ -6,11 +6,11 @@ pipeline{
 				sh '''
 					virtualenv mypython
 					source mypython/bin/activate
-					pip install numpy --user
-					pip install scipy --user
+					pip install numpy 
+					pip install scipy 
 					pip install opencv-contrib-python
-					pip install --upgrade scikit-image
-					pip install --upgrade imutils
+					pip install scikit-image
+					pip install imutils
 					pip install wheel
 					pip install twine
 					deactivate
