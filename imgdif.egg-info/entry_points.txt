@@ -1,3 +1,0 @@
-[console_scripts]
-imgapp = imgdif.command_line:main
-
