@@ -26,7 +26,7 @@ pipeline{
 				'''
 			}
 		}
-		
+		/*
 		stage('Installing the .whl file locallly'){
 			steps{
 				sh '''
@@ -44,5 +44,6 @@ pipeline{
 				'''
 			}
 		}
+		*/
 	}
 }
