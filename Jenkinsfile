@@ -63,14 +63,12 @@ pipeline{
 		*/
 		
 	}
-        agent {label 'unit'}
-	 stages {
-		 stage('Start a Create the virtual environment'){
+		 stage('unit test'){
+        		agent {label 'unit'}
                         steps{
 				sh 'echo "Hello" '
 			}
 		}
 
-	}
 
 }
