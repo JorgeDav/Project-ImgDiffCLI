@@ -14,15 +14,13 @@ pipeline{
 					pip install wheel
 					pip install twine
 					if [[ -d "Project-ImgDiffCLI" ]]; then
-						tree
 						cd Project-ImgDiffCLI
 					else
 						git clone https://github.com/saulcruzm/Project-ImgDiffCLI
 						cd Project-ImgDiffCLI
 					fi	
-					python3 imgdif/__init__.py -f Project-ImgDiffCLI/image1.png -s Project-ImgDiffCLI/image2.png
-					python setup.py bdist_wheel
-					tree 
+					python3 imgdif/__init__.py -f ../image1.png -s ../image2.png
+					python setup.py bdist_wheel 
 					deactivate
 				'''
 			}
