@@ -15,6 +15,8 @@ pipeline{
 					pip install twine
 					git clone https://github.com/saulcruzm/Project-ImgDiffCLI
 					python3 imgdif/__init__.py -f Project-ImgDiffCLI/image1.png -s Project-ImgDiffCLI/image2.png
+					python setup.py bdist_wheel
+					tree 
 					deactivate
 				'''
 			}
