@@ -1,19 +1,18 @@
 pipeline{
 	agent {label 'dev'}
 	stages {
-		stage('Install Python & Pip'){
+		stage('Start a Create the virtual environment'){
 			steps{
 				sh '''
-					sudo yum install python3
-					python3 get-pip.py
+					virtualenv mypython
 				'''
 			}
 		}
 		
-		stage('Install virtualenv'){
+		stage('Deactivate the virtual environment'){
 			steps{
 				sh '''
-					sudo python3 get-pip.py --user
+					deactivate
 				'''
 			}
 		
