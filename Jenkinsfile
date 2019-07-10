@@ -27,13 +27,22 @@ pipeline{
 			}
 		}
 		
-		stage('Deactivate the virtual environment'){
+		stage('Installing the .whl file locallly'){
 			steps{
 				sh '''
-					
+					cd /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/dist
+					pip install imgdif-0.1-py3-none-any.whl
 				'''
 			}
 		
 		}
+
+		stage('Verify that the package is installed on the system'){
+			steps{
+				sh '''
+					imgapp -first /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image1.png -second /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI.image2.png
+				'''
+			}
+		{
 	}
 }
