@@ -5,6 +5,7 @@ pipeline{
 			steps{
 				sh '''
 					virtualenv mypython
+					source mypython/bin/activate
 				'''
 			}
 		}
