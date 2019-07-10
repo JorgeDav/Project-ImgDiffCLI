@@ -3,7 +3,7 @@ pipeline{
 	stages {
 		stage('Install Git'){
 			steps{
-				sudo yum install git
+				sh 'sudo yum install git'
 			}
 		}
 	}
