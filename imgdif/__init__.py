@@ -30,4 +30,3 @@ def app():
     else:
 	    return("False: Images are different")
 
-print(app())
