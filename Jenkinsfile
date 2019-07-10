@@ -13,7 +13,7 @@ pipeline{
 		stage('Install virtualenv'){
 			steps{
 				sh '''
-					python3 get-pip.py --user
+					sudo python3 get-pip.py --user
 				'''
 			}
 		
