@@ -15,6 +15,7 @@ pipeline{
 					pip install twine
 					if [[ -d "Project-ImgDiffCLI" ]]; then
 						cd Project-ImgDiffCLI
+						git pull
 					else
 						git clone https://github.com/saulcruzm/Project-ImgDiffCLI
 						cd Project-ImgDiffCLI
