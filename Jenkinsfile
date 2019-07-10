@@ -40,7 +40,7 @@ pipeline{
 		stage('Verify that the package is installed on the system'){
 			steps{
 				sh '''
-					imgapp -first /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image1.png -second /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image2.png
+					imgapp -f /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image1.png -s /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image2.png
 				'''
 			}
 		}
