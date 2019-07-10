@@ -16,6 +16,14 @@ pipeline{
 			}
 		}
 //-------------------------------------------------------	
+		
+		 stage('unit test'){
+        		agent {label 'unit'}
+                        	steps{
+					sh 'echo "Hello" '
+				}
+		}
+		
 		stage('Start a Create the virtual environment'){
 			steps{
 				sh '''
@@ -62,12 +70,6 @@ pipeline{
 		}
 		*/
 
-		 stage('unit test'){
-        		agent {label 'unit'}
-                        steps{
-				sh 'echo "Hello" '
-			}
-		}
 	}
 
 }
