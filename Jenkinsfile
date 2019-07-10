@@ -1,10 +1,22 @@
 pipeline{
 	agent {label 'dev'}
 	stages {
-		stage('Install Git'){
+		stage('Install Python & Pip'){
 			steps{
-				sh 'sudo yum install git'
+				sh '''
+					sudo yum install python3
+					python3 get-pip.py
+				'''
 			}
+		}
+		
+		stage('Install virtualenv'){
+			steps{
+				sh '''
+					pip install virtualenv
+				'''
+			}
+		
 		}
 	}
 }
