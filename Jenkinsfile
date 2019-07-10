@@ -1,5 +1,6 @@
 pipeline{
-	agent any
+	agent {label 'dev'}
+//------------BUILD----------------------------------------------
 	stages {
 		stage('Start a Create the virtual environment'){
 			steps{
@@ -23,6 +24,9 @@ pipeline{
 					pwd	
 					python3 imgdif/__init__.py -f ../image1.png -s ../image2.png
 					python setup.py bdist_wheel 
+					git add *
+					git commit -m "Build completed"
+					git push origin master
 					deactivate
 				'''
 			}
@@ -46,18 +50,21 @@ pipeline{
 			}
 		}
 		*/
+		
+//---------SONAR-----------------------------------------
 		stage('Sonarqube') {
     			environment {
         		scannerHome = tool 'SonarScan'
     			}
 			steps {
         			withSonarQubeEnv('Sonar') {
-            			sh "sh ${scannerHome}/bin/sonar-scanner"
+            			sh "${scannerHome}/bin/sonar-scanner"
         			}
 				timeout(time: 10, unit: 'MINUTES') {
             			waitForQualityGate abortPipeline: true
         			}
 			}
+//--------------------------------------------------------
 		}
 	
 	}
