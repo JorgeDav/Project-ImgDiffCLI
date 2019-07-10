@@ -6,6 +6,13 @@ pipeline{
 				sh '''
 					virtualenv mypython
 					source mypython/bin/activate
+					pip install numpy --user
+					pip install scipy --user
+					pip install opencv-contrib-python
+					pip install --upgrade scikit-image
+					pip install --upgrade imutils
+					pip install wheel
+					pip install twine
 					deactivate
 				'''
 			}
@@ -14,7 +21,7 @@ pipeline{
 		stage('Deactivate the virtual environment'){
 			steps{
 				sh '''
-					heo
+					
 				'''
 			}
 		
