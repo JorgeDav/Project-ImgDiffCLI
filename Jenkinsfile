@@ -6,6 +6,7 @@ pipeline{
 				sh '''
 					virtualenv mypython
 					source mypython/bin/activate
+					deactivate
 				'''
 			}
 		}
@@ -13,7 +14,7 @@ pipeline{
 		stage('Deactivate the virtual environment'){
 			steps{
 				sh '''
-					deactivate
+					heo
 				'''
 			}
 		
