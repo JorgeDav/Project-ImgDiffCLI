@@ -19,12 +19,12 @@ def diff(args):
     image2 = cv2.imread(args["second"])
 
     # convert the images to grayscale
-    gray1 = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
-    gray2 = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+    gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
     # compute the Structural Similarity Index (SSIM) between the two
     # images, ensuring that the difference image is returned
-    (score, diff) = compare_ssim(grayA, grayB, full=True)
+    (score, diff) = compare_ssim(gray1, gray2, full=True)
     return score
 
 def output(score):
