@@ -44,7 +44,7 @@ pipeline{
 						cd Project-ImgDiffCLI
 					fi
 					pwd	
-					python3 imgdif/command_line.py -f ../image1.png -s ../image2.png
+					python3 imgdif/__init__.py -f ../image1.png -s ../image2.png
 					python setup.py bdist_wheel 
 					deactivate
 				'''
