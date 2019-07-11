@@ -69,7 +69,7 @@ pipeline{
                                 steps{
                                         sh '''
 						cd /
-						cd home
+						cd /home/ec2-user
 						pip3 install imgdif1-0.2-py3-none-any.whl --user
 						imgapp -f images/image11.png -s images/image1.png
 						pip3 uninstall imgdif1-0.2-py3-none-any.whl --user
