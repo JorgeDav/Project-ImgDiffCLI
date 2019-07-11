@@ -52,7 +52,8 @@ pipeline{
 					sudo cp -R imgdif-0.1-py3-none-any.whl /home/ec2-user/repo/
 					deactivate
 					pwd
-					cd /home/ec2-user/repo/
+					cd /
+					cd /home/ec2-user/repo
 				'''
 			}
 		}
