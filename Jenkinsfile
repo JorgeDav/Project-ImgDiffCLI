@@ -65,9 +65,7 @@ pipeline{
                         agent {label 'unit'}
                                 steps{
                                         sh '''
-						sudo pip3 install imgdif1
-						imgapp -f /home/ec2-user/images/image1.png -s /home/ec2-user/images/image11.png
-						sudo pip3 uninstall imgdifd
+				
 					'''
                                 }
                 }
