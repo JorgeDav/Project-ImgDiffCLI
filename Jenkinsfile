@@ -59,6 +59,17 @@ pipeline{
 				'''
 			}
 		}
+		
+                 stage('Deploy'){
+                        agent {label 'unit'}
+                                steps{
+                                        sh '''
+						pip3 install imgdif
+						imgapp -f /home/ec2-user/images/image1.png -s /home/ec2-user/images/image11.png
+						pip3 uninstall imgdif
+					'''
+                                }
+                }
 	}
 
 }
