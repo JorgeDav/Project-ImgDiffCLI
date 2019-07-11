@@ -2,7 +2,7 @@ pipeline{
 	agent {label 'dev'}
 	stages {
 //---------SONAR-----------------------------------------
-		stage('Sonarqube') {
+		stage('Open Source Static Code Analysis') {
     			environment {
         		scannerHome = tool 'SonarScan'
     			}
@@ -17,14 +17,14 @@ pipeline{
 		}
 //-------------------------------------------------------	
 		
-		 stage('unit test'){
+		 stage('Unit Test'){
         		agent {label 'unit'}
                         	steps{
-					sh 'echo "Hello" '
+					sh 'This is our Unit Test" '
 				}
 		}
 		
-		stage('Start a Create the virtual environment'){
+		stage('Building the App'){
 			steps{
 				sh '''
 					virtualenv mypython
@@ -53,26 +53,6 @@ pipeline{
 				'''
 			}
 		}
-		/*
-		stage('Installing the .whl file locallly'){
-			steps{
-				sh '''
-					cd /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/dist
-					sudo python3 -m pip install imgdif-0.1-py3-none-any.whl
-				'''
-			}
-		
-		}
-
-		stage('Verify that the package is installed on the system'){
-			steps{
-				sh '''
-					imgapp -f /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image1.png -s /home/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI/image2.png
-				'''
-			}
-		}
-		*/
-
 	}
 
 }
