@@ -20,7 +20,7 @@ pipeline{
 		 stage('Unit Test'){
         		agent {label 'unit'}
                         	steps{
-					sh 'This is our Unit Test" '
+					sh 'echo "This is our Unit Test" '
 				}
 		}
 		
