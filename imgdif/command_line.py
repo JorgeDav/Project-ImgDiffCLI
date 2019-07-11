@@ -6,4 +6,5 @@ def main():
     out=__init__.output(score)
     print ("Score: {} %".format(score*100))
     print(out)
-    
+   
+main()
