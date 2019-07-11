@@ -54,7 +54,7 @@ pipeline{
 					pwd
 					sudo cd /
 					sudo cd /home/ec2-user/repo/
-					sudo scp -r imgdif1-0.2-py3-none-any.whl ec2-user@3.16.49.180:/home/ec2-user/
+					sudo scp -r imgdif1-0.2-py3-none-any.whl ec2-user@3.16.49.180:/var/lib/jenkins/workspace/PythonProject/
 					sudo cd /
 					sudo cd /var/lib/jenkins/workspace/PythonProject
 					sudo rm -rf Project-ImgDiffCLI
@@ -68,9 +68,7 @@ pipeline{
                         agent {label 'unit'}
                                 steps{
                                         sh '''
-						sudo cd /
-						sudo cd /home/ec2-user
-						pip3 install imgdif1-0.2-py3-none-any.whl --user
+						pip3 install imgdif1-0.2-py3-none-any.whl  --user
 						imgapp -f images/image11.png -s images/image1.png
 						pip3 uninstall imgdif1-0.2-py3-none-any.whl --user
 					'''
