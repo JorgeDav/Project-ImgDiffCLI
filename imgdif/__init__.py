@@ -14,16 +14,16 @@ def app():
     args = vars(ap.parse_args())
 
     # load the two input images
-    imageA = cv2.imread(args["first"])
-    imageB = cv2.imread(args["second"])
+    image1 = cv2.imread(args["first"])
+    image2 = cv2.imread(args["second"])
  
     # convert the images to grayscale
-    grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
-    grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+    gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
     # compute the Structural Similarity Index (SSIM) between the two
     # images, ensuring that the difference image is returned
-    (score, diff) = compare_ssim(grayA, grayB, full=True)
+    (score, diff) = compare_ssim(gray1, gray2, full=True)
     print("Score: {} %".format(score*100))
     if score == 1:
             return True
