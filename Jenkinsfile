@@ -68,7 +68,9 @@ pipeline{
                         agent {label 'unit'}
                                 steps{
                                         sh '''
-				
+						sudo pip3 install imgdif1-0.2-py3-none-any.whl
+						imgapp -f images/image11.png -s images/image1.png
+						sudo pip3 uninstall imgdif1-0.2-py3-none-any.whl
 					'''
                                 }
                 }
