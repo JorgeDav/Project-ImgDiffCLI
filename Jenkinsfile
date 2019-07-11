@@ -49,15 +49,16 @@ pipeline{
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl
 					imgapp -f ../image1.png -s ../image2.png 
-					sudo cp -R imgdif1-0.2-py3-none-any.whl /home/ec2-user/repo/
+					//sudo cp -R imgdif1-0.2-py3-none-any.whl /home/ec2-user/repo/
 					deactivate
-					pwd
-					sudo cd /
-					pwd
+					//pwd
+					//sudo cd /
+					//pwd
 					sudo cd /home/ec2-user/repo
 					//sudo python3 -m twine upload imgdif1-0.2-py3-none-any.whl
 					sudo cd /
 					sudo cd /var/lib/jenkins/workspace/PythonProject/
+					sudo cd /
 					sudo rm -rf Project-ImgDiffCLI
 					sudo rm -rf /home/ec2-user/repo/*
 				'''
