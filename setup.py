@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='imgdif',
+setup(name='imgdif1',
       version='0.2',
       description='Compares two images',
       url='http://github.com/storborg/funniest',
