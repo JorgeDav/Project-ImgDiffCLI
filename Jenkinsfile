@@ -49,6 +49,7 @@ pipeline{
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl 
 					imgapp -f ../image1.png -s ../image2.png 
+					python -m twine upload imgdif-0.1-py3-none-any.whl
 					deactivate
 				'''
 			}
