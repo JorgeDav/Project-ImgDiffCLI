@@ -55,7 +55,7 @@ pipeline{
 					sudo cd /
 					pwd
 					sudo cd /home/ec2-user/repo
-					sudo python3 -m twine upload imgdif1-0.2-py3-none-any.whl
+					//sudo python3 -m twine upload imgdif1-0.2-py3-none-any.whl
 					sudo cd /
 					sudo cd /var/lib/jenkins/workspace/PythonProject/
 					sudo rm -rf Project-ImgDiffCLI
@@ -68,9 +68,9 @@ pipeline{
                         agent {label 'unit'}
                                 steps{
                                         sh '''
-						pip3 install imgdif1
+						sudo pip3 install imgdif1
 						imgapp -f /home/ec2-user/images/image1.png -s /home/ec2-user/images/image11.png
-						pip3 uninstall imgdif1
+						sudo pip3 uninstall imgdif1
 					'''
                                 }
                 }
