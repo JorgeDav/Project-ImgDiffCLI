@@ -49,7 +49,7 @@ pipeline{
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl
 					imgapp -f ../image1.png -s ../image2.png 
-					cp -R imgdif-0.1-py3-none-any.whl /home/ec2-user/repo/
+					sudo cp -R imgdif-0.1-py3-none-any.whl /home/ec2-user/repo/
 					deactivate
 					pwd
 					cd /home/ec2-user/repo/
