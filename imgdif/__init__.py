@@ -29,5 +29,3 @@ def app():
             return True
     else:
 	    return False
-
-print(app())
