@@ -1,9 +1,9 @@
-import imgdif 
+import __init__ 
 
 def main():
-    args=imgdif.input()
-    score=imgdif.diff(args)
-    out=imgdif.output(score)
+    args=__init__.input()
+    score=__init__.diff(args)
+    out=__init__.output(score)
     print ("Score: {} %".format(score*100))
     print(out)
     
