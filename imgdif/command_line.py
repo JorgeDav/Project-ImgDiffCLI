@@ -1,9 +1,9 @@
-import __init__ 
+import funct 
 
 def main():
-    args=__init__.input()
-    score=__init__.diff(args)
-    out=__init__.output(score)
+    args=funct.input()
+    score=funct.diff(args)
+    out=funct.output(score)
     print ("Score: {} %".format(score*100))
     print(out)
    
