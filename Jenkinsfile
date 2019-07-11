@@ -10,9 +10,9 @@ pipeline{
         			withSonarQubeEnv('Sonar') {
             			sh "${scannerHome}/bin/sonar-scanner"
         			}
-				//timeout(time: 10, unit: 'MINUTES') {
-            			//waitForQualityGate abortPipeline: true
-        			//}
+				timeout(time: 10, unit: 'MINUTES') {
+            			waitForQualityGate abortPipeline: true
+        			}
 			}
 		}
 //-------------------------------------------------------	
@@ -27,7 +27,6 @@ pipeline{
 		stage('Start a Create the virtual environment'){
 			steps{
 				sh '''
-					
 					virtualenv mypython
 					source mypython/bin/activate
 					pip install numpy 
