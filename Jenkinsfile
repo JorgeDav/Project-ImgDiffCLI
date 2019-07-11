@@ -55,7 +55,7 @@ pipeline{
 					sudo cd /
 					pwd
 					sudo cd /home/ec2-user/repo
-					sudo python3 twine upload -r pypitest imgdif-0.1-py3-none-any.whl
+					sudo python3 -m twine upload imgdif-0.1-py3-none-any.whl
 				'''
 			}
 		}
