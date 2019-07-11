@@ -54,7 +54,7 @@ pipeline{
 					//pwd
 					//sudo cd /
 					//pwd
-					sudo cd /home/ec2-user/repo
+					//sudo cd /home/ec2-user/repo
 					//sudo python3 -m twine upload imgdif1-0.2-py3-none-any.whl
 					sudo cd /
 					sudo cd /var/lib/jenkins/workspace/PythonProject/
