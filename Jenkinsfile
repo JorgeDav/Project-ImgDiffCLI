@@ -27,6 +27,7 @@ pipeline{
 		stage('Start a Create the virtual environment'){
 			steps{
 				sh '''
+					rm -r /var/lib/jenkins/workspace/Project-ImgDiffCLI_master/Project-ImgDiffCLI
 					virtualenv mypython
 					source mypython/bin/activate
 					pip install numpy 

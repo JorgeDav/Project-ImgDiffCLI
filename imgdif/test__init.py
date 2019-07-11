@@ -1,7 +1,7 @@
 #test file __init__.py
 
 import pytest
-import funct 
+import funct
 
 def test_score_imgeq():
     args={'first': "../image1.png", 'second':"../image11.png" }
