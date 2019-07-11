@@ -26,6 +26,8 @@ def app():
     (score, diff) = compare_ssim(grayA, grayB, full=True)
     print("Score: {} %".format(score*100))
     if score == 1:
-            return("True: Images are the same")
+            return True
     else:
-	    return("False: Images are different"
+	    return False
+
+print(app())
