@@ -54,7 +54,7 @@ pipeline{
 					pwd
 					sudo cd /
 					sudo cd /home/ec2-user/repo/
-					sudo scp -r imgdif1-0.2-py3-none-any.whl ec2-user@3.16.49.180:/var/lib/jenkins/workspace/PythonProject/
+					sudo scp -r imgdif1-0.2-py3-none-any.whl jenkins@3.16.49.180:ec2-user@3.16.49.180:/home/jenkins/
 					sudo cd /
 					sudo cd /var/lib/jenkins/workspace/PythonProject
 					sudo rm -rf Project-ImgDiffCLI
