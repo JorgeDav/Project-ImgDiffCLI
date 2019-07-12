@@ -39,5 +39,5 @@ def final():
     args=inputs()
     score=diff(args)
     out=output(score)
-    print ("Si funca Score: {} %".format(score*100))
+    print ("Score: {} %".format(score*100))
     print(out)
