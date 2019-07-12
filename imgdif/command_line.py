@@ -1,4 +1,6 @@
-import imgdif 
+#command_line.py
+import imgdif
 
 def main():
-    print(imgdif.app())
+    imgdif.final()
+
