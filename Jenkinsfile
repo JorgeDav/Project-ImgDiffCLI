@@ -31,7 +31,6 @@ pipeline{
 					fi
 					cd imgdif 
 					pytest test_funct.py
-					mv test_funct.py __init__.py
 					
 				'''
 				}
@@ -49,8 +48,15 @@ pipeline{
 					pip install imutils
 					pip install wheel
 					pip install twine
-					pwd	
-					python3 imgdif/__init__.py -f ../image1.png -s ../image2.png
+					if [[ -d "Project-ImgDiffCLI" ]]; then
+						cd Project-ImgDiffCLI
+						git pull
+					else
+						git clone https://github.com/saulcruzm/Project-ImgDiffCLI
+						cd Project-ImgDiffCLI
+					fi
+					pwd
+					mv imgdif/test_funct.py imgdif/__init__.py
 					python setup.py bdist_wheel 
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl
