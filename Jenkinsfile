@@ -62,15 +62,6 @@ pipeline{
 					imgapp -f ../image1.png -s ../image11.png 
 					sudo cp -R imgdif1-0.2-py3-none-any.whl /home/ec2-user/repo/
 					deactivate
-					pwd
-					sudo cd /
-					sudo cd /home/ec2-user/repo/
-					sudo scp -r imgdif1-0.2-py3-none-any.whl jenkins@3.16.49.180:/var/lib/jenkins/workspace/PythonProject/
-					sudo cd /
-					sudo cd /var/lib/jenkins/workspace/PythonProject
-					sudo rm -rf Project-ImgDiffCLI
-					sudo cd /
-					sudo rm -rf /home/ec2-user/repo/*
 				'''
 			}
 		}
@@ -79,9 +70,10 @@ pipeline{
                         agent {label 'deploy'}
                                 steps{
                                         sh '''
+						scp -r ec2-user@18.216.75.24:/home/ec2-user/repo/imgdif1-0.2-py3-none-any.whl /var/lib/jenkins/workspace/PythonProject/
+						pip3 uninstall -y imgdif1-0.2-py3-none-any.whl
 						pip3 install imgdif1-0.2-py3-none-any.whl  --user
 						imgapp -f image11.png -s image1.png
-						pip3 uninstall -y imgdif1-0.2-py3-none-any.whl
 					'''
                                 }
                 }
