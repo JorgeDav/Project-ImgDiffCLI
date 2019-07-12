@@ -13,7 +13,7 @@ def test_score_imgdif():
 
 def test_out_true():
     score=1
-    assert funct.output(score)==True
+    assert funct.output(score)==False
 
 def test_out_false():
     score=0.5
