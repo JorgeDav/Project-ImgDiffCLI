@@ -21,6 +21,7 @@ pipeline{
         		agent {label 'unit'}
                         steps{
 				sh '''
+					pip install pytest --user
 					if [[ -d "Project-ImgDiffCLI" ]]; then
 						cd Project-ImgDiffCLI
 						git pull
