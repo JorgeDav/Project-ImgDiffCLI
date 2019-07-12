@@ -21,7 +21,6 @@ pipeline{
         		agent {label 'unit'}
                         steps{
 				sh '''
-					rm -rf Project-ImgDiffCLI
 					pip3 install pytest --user
 					if [[ -d "Project-ImgDiffCLI" ]]; then
 						cd Project-ImgDiffCLI
