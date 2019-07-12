@@ -18,10 +18,8 @@ pipeline{
 //-------------------------------------------------------	
 		
 		 stage('Unit Test'){
-        		agent {label 'unit'}
                         steps{
 				sh '''
-					pip3 install pytest --user
 					if [[ -d "Project-ImgDiffCLI" ]]; then
 						cd Project-ImgDiffCLI
 						git pull
@@ -31,7 +29,6 @@ pipeline{
 					fi
 					cd imgdif 
 					pytest test_funct.py
-					
 				'''
 				}
 		}
@@ -79,7 +76,7 @@ pipeline{
 		}
 		
                  stage('Deploy'){
-                        agent {label 'unit'}
+                        agent {label 'deploy'}
                                 steps{
                                         sh '''
 						pip3 install imgdif1-0.2-py3-none-any.whl  --user
