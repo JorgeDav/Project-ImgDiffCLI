@@ -19,8 +19,20 @@ pipeline{
 		
 		 stage('Unit Test'){
         		agent {label 'unit'}
-                        	steps{
-					sh 'echo "This is our Unit Test" '
+                        steps{
+				sh '''
+					if [[ -d "Project-ImgDiffCLI" ]]; then
+						cd Project-ImgDiffCLI
+						git pull
+					else
+						git clone https://github.com/saulcruzm/Project-ImgDiffCLI
+						cd Project-ImgDiffCLI
+					fi
+					cd imgdif 
+					pytest test_funct.py
+					mv test_funct.py __init__.py
+					
+				'''
 				}
 		}
 		
@@ -36,13 +48,6 @@ pipeline{
 					pip install imutils
 					pip install wheel
 					pip install twine
-					if [[ -d "Project-ImgDiffCLI" ]]; then
-						cd Project-ImgDiffCLI
-						git pull
-					else
-						git clone https://github.com/saulcruzm/Project-ImgDiffCLI
-						cd Project-ImgDiffCLI
-					fi
 					pwd	
 					python3 imgdif/__init__.py -f ../image1.png -s ../image2.png
 					python setup.py bdist_wheel 
