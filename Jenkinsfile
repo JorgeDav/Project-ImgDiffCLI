@@ -30,7 +30,7 @@ pipeline{
 						cd Project-ImgDiffCLI
 					fi
 					cd imgdif 
-					ll|
+					mv imgdif/__init__.py imgdif/test_funct.py
 					pytest test_funct.py
 					
 				'''
@@ -57,8 +57,9 @@ pipeline{
 						cd Project-ImgDiffCLI
 					fi
 					pwd
-					mv imgdif/test_funct.py imgdif/__init__.py
-					python setup.py bdist_wheel 
+					mv imgdif/funct.py imgdif/__init__.py
+					python setup.py bdist_wheel
+					mv imgdif/__init__.py imgdif/funct.py 
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl
 					imgapp -f ../image1.png -s ../image2.png 
