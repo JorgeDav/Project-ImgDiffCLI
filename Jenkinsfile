@@ -61,7 +61,8 @@ pipeline{
 					mv imgdif/__init__.py imgdif/funct.py 
 					cd dist
 					pip install imgdif-0.1-py3-none-any.whl
-					imgapp -f ../image1.png -s ../image2.png 
+					imgapp -f ../image1.png -s ../image2.png
+					imgapp -f ../image1.png -s ../image11.png 
 					sudo cp -R imgdif1-0.2-py3-none-any.whl /home/ec2-user/repo/
 					deactivate
 					pwd
