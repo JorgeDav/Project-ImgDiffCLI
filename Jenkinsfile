@@ -30,6 +30,7 @@ pipeline{
 						cd Project-ImgDiffCLI
 					fi
 					cd imgdif 
+					ll|
 					pytest test_funct.py
 					
 				'''
