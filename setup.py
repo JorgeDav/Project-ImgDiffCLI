@@ -11,7 +11,7 @@ setup(name='imgdif1',
       zip_safe=False,
       entry_points = {
         'console_scripts': [
-            'imgapp=imgdif.command_line:main',
+            'imgapp=imgdif.funct:final',
         ]
       }
 )
