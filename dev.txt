@@ -1,0 +1,23 @@
+install this on the dev server
+sudo yum -y install python3
+sudo yum -y install libXext libSM libXrender
+sudo pip3 install virtualenv
+
+sudo su
+cd /var/lib/jenkins/workspace/build2_master/Project-ImgDiffCLI/dist
+
+sudo cp -R imgdif-0.1-py3-none-any.whl /home/ec2-user/repo/
+sudo chown -R $USER dist
+
+sudo chown -R $USER imgdif-0.1-py3-none-any.whl
+
+
+
+
+[server-login]
+repository:
+username: saulcruzm
+password: pythonApp2019
+
+
+                                     
